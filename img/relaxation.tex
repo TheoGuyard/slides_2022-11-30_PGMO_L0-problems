@@ -1,0 +1,27 @@
+\begin{tikzpicture}
+    \draw[thick,->] (0,0) -- (6,0);
+    \node at (6.5,0.05) (axis_text) {value};
+
+    \node at (0.5,0) (opt) {};
+    \draw[thick,red] (opt.north) -- (opt.south);
+    \node[red] at (0.5,-0.4) (opt_text) {$\opt{\pobj}$};
+
+    \node at (4,0) (pv1) {};
+    \draw[thick,teal] (pv1.north) -- (pv1.south);
+    \node[teal] at (4,-0.4) (pv1_text) {$\node{\pobj}$};
+
+    \pause
+    \node at (1.5,0) (ub) {};
+    \draw[thick,red,->] (opt) .. controls (1,0.5) and (1,0.5) .. (ub);
+    \node[red] at (1,0.6) (opt_arrow_text) {\scriptsize restriction};
+    \draw[thick,red] (ub.north) -- (ub.south);
+    \node[red] at (1.5,-0.4) (ub_text) {$\UB{\pobj}$};
+
+    \pause
+    \node at (2,0) (dv1) {};
+    \draw[thick,teal] (dv1.north) -- (dv1.south);
+    \node[teal] at (2,-0.4) (dv1_text) {$\node{\robj}$};
+    \draw[thick,teal,->] (pv1) .. controls (3,0.5) and (3,0.5) .. (dv1);
+    \node[teal] at (3,0.6) (dv1_arrow_text) {\scriptsize relaxation};
+
+\end{tikzpicture}

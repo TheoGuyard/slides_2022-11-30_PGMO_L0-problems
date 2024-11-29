@@ -1,0 +1,45 @@
+% ------------------------ %
+% 	  Shortcuts		  %
+% ------------------------ %
+
+% Lowercase styles
+\foreach \x in {a,...,z}{%
+	\expandafter\xdef\csname \x\endcsname{\noexpand\ensuremath{\noexpand\mathbf{\x}}}
+}
+\foreach \x in {a,...,z}{%
+	\expandafter\xdef\csname \x rm\endcsname{\noexpand\ensuremath{\noexpand\mathrm{\x}}}
+}
+
+% Uppercase styles
+\foreach \x in {A,...,Z}{%
+	\expandafter\xdef\csname \x\endcsname{\noexpand\ensuremath{\noexpand\mathbf{\x}}}
+}
+\foreach \x in {A,...,Z}{%
+	\expandafter\xdef\csname \x rm\endcsname{\noexpand\ensuremath{\noexpand\mathrm{\x}}}
+}
+\foreach \x in {A,...,Z}{%
+	\expandafter\xdef\csname \x bb\endcsname{\noexpand\ensuremath{\noexpand\mathbb{\x}}}
+}
+\foreach \x in {A,...,Z}{%
+	\expandafter\xdef\csname \x c\endcsname{\noexpand\ensuremath{\noexpand\mathcal{\x}}}
+}
+
+% Figures styles
+\def\0{{\mathbf 0}}
+\def\1{{\mathbf 1}}
+
+% Miscellaneous
+\def\ie{\emph{i.e.,}\xspace}
+\def\eg{\emph{e.g.,}\xspace}
+\def\etal{\emph{et al.}\xspace}
+\def\resp{resp.\xspace}
+\def\iif{iff.\xspace}
+\def\st{\textsf{s.t.}\xspace}
+
+% Notes
+\def\addNote#1{{\noindent\color{blue}{[Note : #1]}}}
+\def\toDo#1{{\noindent\color{red}{[Todo : #1]}}}
+\def\addCite{{\noindent\color{orange}{[Cite]}}}
+
+\newcommand{\emphone}[1]{{\color{orange}#1}}
+\newcommand{\emphtwo}[1]{{\color{teal}#1}}

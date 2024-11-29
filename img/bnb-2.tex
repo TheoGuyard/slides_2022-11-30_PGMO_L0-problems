@@ -1,0 +1,48 @@
+\forestset{
+    node/.style = {
+        draw, 
+        circle,
+        thick,
+        align = center,
+        font = \small,
+        top color = white,
+        bottom color = teal!50,
+    },
+    branch label/.style={
+        edge label = {
+            node[midway,fill=white,font=\small,draw=black,text height=0.5em,scale=0.9]{#1}
+        }
+    },
+    bnb/.style={
+        branch label,
+        for tree = {
+            node,
+            s sep'+=14mm,
+            l sep'+=2mm,
+            edge={->},
+            edge+={thick},
+        },
+        before typesetting nodes={
+            for tree={
+                split option={content}{:}{content,branch label},
+            },
+        },
+    },
+}
+\begin{forest}
+    bnb,
+    [
+        \(\nodeSymbIter{0}\)
+            [\(\nodeSymbIter{1}\):\({\pvi{\idxentrynode_1}=0}\)
+            [\(\nodeSymbIter{3}\):\({\pvi{\idxentrynode_2}=0}\)] {
+                \draw [thick,dashed,->] ([yshift=0pt, xshift=0pt].south east) -- ([yshift=-5pt, xshift=5pt].south east);
+                \draw [thick,dashed,->]  ([yshift=0pt, xshift=0pt].south west) -- ([yshift=-5pt, xshift=-5pt].south west);
+            }
+            [\(\nodeSymbIter{4}\):\({\pvi{\idxentrynode_2}\neq0}\),bottom color = red!50]
+    ][
+        \(\nodeSymbIter{2}\):\({\pvi{\idxentrynode_1}\neq0}\),
+            [\(\nodeSymbIter{5}\):\({\pvi{\idxentrynode_2}=0}\),bottom color = red!50]
+            [\(\nodeSymbIter{6}\):\({\pvi{\idxentrynode_2}\neq0}\),bottom color = red!50]
+    ]
+    ]
+\end{forest}

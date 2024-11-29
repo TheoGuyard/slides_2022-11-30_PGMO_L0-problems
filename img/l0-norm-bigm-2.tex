@@ -1,0 +1,35 @@
+\newcommand{\pointsize}{0.04}
+\begin{figure}[!ht]
+  \small
+  \begin{tikzpicture}[
+      domain=-0.8:0.8,
+      xscale = 2,
+      yscale = 2,
+      lbl/.style = {font=\scriptsize, fill=white, 
+      inner sep=2pt}
+  ]
+    \node (origin) at (0,0) {};
+    \draw[->,opacity=0.5] (-1,0) -- (1, 0);
+    \draw[->,opacity=0.5] (0,0) -- (0, 1);
+    \draw[opacity=0.5] (-0.03, 0.3) -- (0.03, 0.3);
+    \node[above right] at (0,0.3) {$1$};
+    \node[right] at (1, 0) {$\pv$};
+    \draw[-{Arc Barb[arc=180,reversed]},teal,thick,opacity=0.5] (-0.5, 0.3) -- (-0.01, 0.3);
+    \draw[{Arc Barb[arc=180,reversed]}-,teal,thick,opacity=0.5] (0.01, 0.3) -- (0.5, 0.3);
+    \fill[teal] (0,0) circle (\pointsize);
+    \draw[opacity=0.5] (-0.5, 0.03) -- (-0.5, -0.03);
+    \draw[opacity=0.5] (0.5, 0.03) -- (0.5, -0.03);
+    \node[below] at (-0.5, 0) {-$\bigM$};
+    \node[below] at (0.5, 0) {$\bigM$};
+    \draw[opacity=0.5] (-0.03, 0.8) -- (0.03, 0.8);
+    \node[right] at (0,0.8) {$+\infty$};
+    \draw[teal,thick,dashed,opacity=0.5] (-0.5, 0.8) -- (-0.8, 0.8);
+    \draw[teal,thick,dashed,opacity=0.5] (0.5, 0.8) -- (0.8, 0.8);
+    \node[above,teal] at (1.17,0.8) {$\norm{\pv}{0} + \pertfunc(\pv)$};
+    \draw[red,thick,opacity=0.5] (0, 0) -- (0.515, 0.3);
+    \draw[red,thick,opacity=0.5] (0, 0) -- (-0.515, 0.3);
+    \draw[red,thick,dashed,opacity=0.5] (-0.5, 0.785) -- (-0.8, 0.785);
+    \draw[red,thick,dashed,opacity=0.5] (0.5, 0.785) -- (0.8, 0.785);
+    \fill[teal] (0,0) circle (\pointsize);
+  \end{tikzpicture}
+\end{figure}

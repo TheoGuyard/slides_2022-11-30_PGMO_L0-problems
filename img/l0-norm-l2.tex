@@ -1,0 +1,27 @@
+\newcommand{\pointsize}{0.04}
+\begin{figure}[!ht]
+  \small
+  \begin{tikzpicture}[
+      domain=-0.8:0.8,
+      xscale = 2,
+      yscale = 2,
+      lbl/.style = {font=\scriptsize, fill=white, 
+      inner sep=2pt}
+  ]
+    \node (origin) at (0,0) {};
+    \draw[->] (-1,0) -- (1, 0);
+    \draw[->] (0,0) -- (0, 1);
+    \draw (-0.03, 0.3) -- (0.03, 0.3);
+    \node[above right] at (0,0.3) {$1$};
+    \node[right] at (1, 0) {$\pv$};
+    \draw[{Arc Barb[arc=180,reversed]}-,teal,thick] (-0.5,0.3) plot[domain=0.01:0.8] (\x,0.3+\x^2) node[anchor=west] {$\norm{\pv}{0} + \pertfunc(\pv)$};
+    \draw[-{Arc Barb[arc=180,reversed]},teal,thick] (-0.5,0.3) plot[domain=-0.8:-0.01] (\x,0.3-\x^2) node {};
+    \fill[teal] (0,0) circle (\pointsize);
+    \pause
+    \draw[red,thick] (0, 0) -- (0.5, 0.53);
+    \draw[red,thick] (0.5, 0.53) plot[domain=0.5:0.8] (\x,0.3+\x^2-0.02) node {};
+    \draw[red,thick] (0, 0) -- (-0.5, 0.53);
+    \draw[red,thick] (-0.5, 0.53) plot[domain=-0.8:-0.5] (\x,0.3-\x^2-0.02) node {};
+    \fill[teal] (0,0) circle (\pointsize);
+  \end{tikzpicture}
+\end{figure}

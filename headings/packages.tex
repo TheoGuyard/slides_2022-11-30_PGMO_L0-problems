@@ -1,40 +1,26 @@
-% Tikz
-\usetikzlibrary{calc}
-\usetikzlibrary{mindmap,trees,shapes,arrows,backgrounds,topaths}
-\usetikzlibrary{decorations.pathmorphing, shapes.geometric}
+% ------------------------ %
+% 	  Packages		%
+% ------------------------ %
 
-% Text
-\usepackage{enumitem}
-\usepackage{ulem}
-\usepackage{pifont}
-
-% Maths
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amsthm}
-\usepackage{amsopn}
-
-% Plots
-\usepackage{pgfplots}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage[setbb,setcolon]{kmath}
+\usepackage{xparse,pgffor,ifthen}
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathrsfs,mathtools,bbm,stmaryrd}
+\usepackage{tikz,pgfplots,forest}
+\usepackage{cancel}
+\usetikzlibrary{arrows.meta}
+\pgfplotsset{compat=newest}
 \usepgfplotslibrary{groupplots}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage{cleveref,csquotes,comment,lipsum,todonotes,soul,extarrows,graphicx}
+\usepackage{glossaries}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{glossaries,url,subcaption}
+\usepackage[texcoord]{eso-pic}
 
-% Tables
-\usepackage{booktabs}
-\usepackage{array}
-\newcolumntype{L}{>$l<$}
-\arraycolsep=1.4pt
-\setlength{\tabcolsep}{3pt}
+\usepackage[most]{tcolorbox}
+\newtcbox{\mytransparentbox}{blank, on line, opacitytext=0.4}
 
-% Algos
-\usepackage[ruled]{algorithm2e}
-
-% Pgfplot
-\pgfplotsset{
-    legend image code/.code={
-        \draw[mark repeat=2,mark phase=2] plot coordinates {
-            (0cm,0cm)
-            (0.25cm,0cm)
-            (0.25cm,0cm)
-        };
-    }
-}
+\usepackage{pifont}
